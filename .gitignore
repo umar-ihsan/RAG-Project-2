@@ -1,0 +1,13 @@
+# Ignore everything by default
+*
+
+# Allow specific files
+!.gitignore
+!requirements.txt
+!main.py
+
+# Allow everything in the src folder
+!src/
+
+# But ignore __pycache__ inside src
+src/__pycache__/

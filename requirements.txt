@@ -1,0 +1,16 @@
+huggingface_hub
+pymongo
+langchain
+langchain_community
+langchain_openai
+langchain_mongodb
+chromadb
+faiss-cpu
+langchain_experimental
+langgraph
+duckduckgo_search
+bs4
+pydantic
+sentence-transformers
+llama-cpp-python
+fastembed
