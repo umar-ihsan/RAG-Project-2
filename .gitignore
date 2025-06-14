@@ -8,7 +8,9 @@
 
 # Allow everything in the src and data folder
 !src/
+!src/**
 !data/
+!data/**
 
 # But ignore __pycache__ inside src
 src/__pycache__/
