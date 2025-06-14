@@ -2,13 +2,17 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, List
+import os
+from dotenv import load_dotenv
 from src.mongodb_utils import connect_to_mongodb, get_articles_from_mongodb, convert_to_documents, split_documents
 from src.vector_store import initialize_embeddings, load_or_create_faiss_vectorstore
 from src.rag import run_rag_system
 
+# Load environment variables
+load_dotenv()
+
 # Initialize FastAPI
 app = FastAPI()
-
 
 # Allow all origins for testing (replace "*" with specific domains for production)
 app.add_middleware(
@@ -24,9 +28,12 @@ chat_history: Dict[str, List[str]] = {}
 
 # Setup MongoDB and FAISS at startup
 def setup_documents():
-    connection_string = "mongodb+srv://jamshidjunaid763:JUNAID12345@insightwirecluster.qz5cz.mongodb.net/?retryWrites=true&w=majority&appName=InsightWireCluster"
-    database_name = "Scraped-Articles-10"
-    collection_name = "Articles2"
+    connection_string = os.getenv("MONGODB_CONNECTION_STRING")
+    database_name = os.getenv("MONGODB_DATABASE", "Scraped-Articles-10")
+    collection_name = os.getenv("MONGODB_COLLECTION", "Articles2")
+
+    if not connection_string:
+        raise ValueError("MONGODB_CONNECTION_STRING environment variable is not set")
 
     client = connect_to_mongodb(connection_string)
     if client:
