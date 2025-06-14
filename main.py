@@ -8,6 +8,8 @@ from src.mongodb_utils import connect_to_mongodb, get_articles_from_mongodb, con
 from src.vector_store import initialize_embeddings, load_or_create_faiss_vectorstore
 from src.rag import run_rag_system
 
+
+#all the env variables are in the .env file
 # Load environment variables
 load_dotenv()
 
