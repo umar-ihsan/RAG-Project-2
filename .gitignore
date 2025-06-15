@@ -9,6 +9,8 @@
 !dockerfile
 !.dockerignore
 !Procfile
+!nixpacks.toml
+!runtime.txt
 
 # Allow everything in the src and data folder
 !src/
