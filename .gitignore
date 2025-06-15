@@ -8,6 +8,7 @@
 !railway.toml
 !dockerfile
 !.dockerignore
+!Procfile
 
 # Allow everything in the src and data folder
 !src/
