@@ -5,6 +5,9 @@
 !.gitignore
 !requirements.txt
 !main.py
+!railway.toml
+!dockerfile
+!.dockerignore
 
 # Allow everything in the src and data folder
 !src/
