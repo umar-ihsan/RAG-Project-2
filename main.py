@@ -9,7 +9,6 @@ from src.vector_store import initialize_embeddings, load_or_create_faiss_vectors
 from src.rag import run_rag_system
 
 
-#all the env variables are in the .env file
 # Load environment variables
 load_dotenv()
 
